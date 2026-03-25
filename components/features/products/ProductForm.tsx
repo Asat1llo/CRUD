@@ -38,7 +38,7 @@ export function ProductForm({ categories, initialData, onSubmit, onCancel }: Pro
       categoryId: "",
       description: "",
       price: 0,
-    } as any,
+    },
   });
 
   return (
@@ -99,6 +99,7 @@ export function ProductForm({ categories, initialData, onSubmit, onCancel }: Pro
                     step="0.01"
                     placeholder="0.00"
                     {...field}
+                    onChange={(e) => field.onChange(e.target.value === "" ? 0 : parseFloat(e.target.value))}
                   />
                 </FormControl>
                 <FormMessage />
